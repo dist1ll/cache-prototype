@@ -22,6 +22,8 @@ type mockStock struct {
 	Ticker         string
 }
 
+// SetData sets the data that the MockDataProvider should return on Fetch requests.
+// jsonData is an array with Stock objects, according to the stock_sentiment.proto.
 func (m *MockDataProvider) SetData(jsonData string) {
 	var stocks []mockStock
 	err := json.Unmarshal([]byte(jsonData), &stocks)
@@ -35,6 +37,7 @@ func (m *MockDataProvider) SetData(jsonData string) {
 	m.Data = sb
 }
 
+// convert an array of mockStocks to a StockBatch object
 func convert(arr []mockStock) (*pb.StockBatch, error) {
 	sb := pb.StockBatch{}
 	sb.S = make([]*pb.Stock, len(arr))
