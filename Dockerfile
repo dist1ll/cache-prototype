@@ -4,7 +4,7 @@ WORKDIR /server
 COPY go.mod ./
 COPY go.sum ./
 
-RUN go mod download
+RUN go mod download -x
 
 RUN mkdir ./bin
 

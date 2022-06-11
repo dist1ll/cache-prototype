@@ -10,6 +10,8 @@ host, port number and the TTL of client request caching:
 For an example on how to set up the server, see the unit tests in `stock_sentiment_test.go` or and the example
 request with a real data provider.
 
+> **_NOTE:_** When run via docker, app is not configurable. Will currently run with default values (port: 8100 and TTL of 15 minutes).
+
 #### Testing
 
 Unit tests with a mocked data provider are defined in `stock_sentiment_test.go`. 
