@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/dist1ll/kaspa/stock_sentiment"
-	"github.com/dist1ll/kaspa/stock_sentiment/provider"
+	pb "github.com/dist1ll/cache-prototype/stock_sentiment"
+	"github.com/dist1ll/cache-prototype/stock_sentiment/provider"
 	"github.com/stretchr/testify/assert"
 	grpc2 "google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

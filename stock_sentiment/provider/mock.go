@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	pb "github.com/dist1ll/kaspa/stock_sentiment"
+	pb "github.com/dist1ll/cache-prototype/stock_sentiment"
 )
 
 // MockDataProvider is a mocking data provider for unit testing our sentiment service

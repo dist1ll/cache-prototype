@@ -1,4 +1,4 @@
-module github.com/dist1ll/kaspa
+module github.com/dist1ll/cache-prototype
 
 go 1.18
 

@@ -3,7 +3,7 @@ package provider
 import (
 	"context"
 	"encoding/json"
-	pb "github.com/dist1ll/kaspa/stock_sentiment"
+	pb "github.com/dist1ll/cache-prototype/stock_sentiment"
 	"io"
 	"net/http"
 	"time"
