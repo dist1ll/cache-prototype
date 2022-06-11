@@ -1,0 +1,35 @@
+syntax = "proto3";
+option go_package = "./";
+
+// Stock contains info about a particular stock and its tracked sentiment.
+message Stock {
+  string ticker = 1;
+  enum Sentiment {
+    Bullish = 0;
+    Bearish = 1;
+  }
+  // TODO: sentiment is derived from score, maybe remove redundancy?
+  Sentiment sentiment = 2;
+  float sentiment_score = 3;
+}
+
+// StockBatch stores an array of Stock objects and the corresponding
+// date of their recording. Stocks objects are grouped by their
+// date, which results in a batch.
+message StockBatch {
+  string date = 1;
+  repeated Stock s = 2;
+}
+
+// RequestParams for fetching stock sentiments from StockSentiment service
+message RequestParams {
+  // If date is not specified, fetch the most recent batch of stocks
+  optional string date = 1;
+}
+
+// StockSentiment returns sentiment information about stocks, aggregated from
+// third-party sources. (At the moment: Tradestie -> wsb@reddit)
+service StockSentiment {
+  // GetStockSentiments returns a batch of stocks and their sentiment scores.
+  rpc GetStockSentiments(RequestParams) returns (StockBatch) {}
+}
